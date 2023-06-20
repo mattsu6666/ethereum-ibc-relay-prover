@@ -82,6 +82,8 @@ func (pr *Prover) CreateMsgCreateClient(clientID string, dstHeader core.Header, 
 	clientState.GenesisTime = genesis.GenesisTimeSeconds
 	clientState.LatestSlot = uint64(bootstrap.Header.Beacon.Slot)
 	clientState.LatestExecutionBlockNumber = bootstrap.Header.Execution.BlockNumber
+	fmt.Println("CreateMsgCreateClient")
+	fmt.Printf("clientState.latestHeight: %+v\n", clientState.GetLatestHeight())
 
 	consensusState := &lctypes.ConsensusState{
 		Slot:                 clientState.LatestSlot,
